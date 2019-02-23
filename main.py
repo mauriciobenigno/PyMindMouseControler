@@ -1,5 +1,5 @@
 # Responsável pela conexão com o MindWave
-#from NeuroPy import NeuroPy
+from NeuroPy import NeuroPy
 
 # Responsável pelo controle do Mouse
 from mouse import MindMouse
@@ -8,9 +8,15 @@ from mouse import MindMouse
 from pynput import keyboard
 
 # CONFIGURAÇÃO INICIAL #
+neuro = NeuroPy("COM6") #Inicializando o MindWave
+neuro.start()
+'''Exemplos de inicialização:
+#windows: object1=NeuroPy("COM6",57600)
+#linux: object1=NeuroPy("/dev/rfcomm0",57600)'''
+
 print('Digite uma velocidade de 5 a 15 (5 mais lento e 15 mais rápido):')
-velocidade = input()
-mouseVirtual = MindMouse(int(velocidade))
+velocidade = input() #Definindo a velocidado do mouse
+mouseVirtual = MindMouse(int(velocidade)) #Iniciando objeto mouse
 
 # CÓDIGO TEMPORARIO
 '''
